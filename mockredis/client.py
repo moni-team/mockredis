@@ -723,7 +723,7 @@ class MockRedis(object):
         # Return the length of the list after the push operation
         return len(redis_list)
 
-    def lrem(self, key, value, count=0):
+    def lrem(self, key, count=0, value=''):
         """Emulate lrem."""
         value = self._encode(value)
         redis_list = self._get_list(key, 'LREM')
